@@ -1,0 +1,15 @@
+.circle {
+  width: 100px;
+  height: 100px;
+  font-size: 40px;
+  line-height: 100px;
+  border-radius: 50%;
+  text-align: center;
+  display: inline-block;
+}
+h1 {
+  margin-bottom: -0.6em
+}
+#no {
+  opacity: 0%;
+}
