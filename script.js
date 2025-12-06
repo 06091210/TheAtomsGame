@@ -15,7 +15,7 @@ for (let i=0; i<line*row; i++) {
   Scolors.push(colors[random]);
 }
 for (let j=0; j<selects.length; j++) {
-  document. write(`<h1 class='circle' style="background: ${Scolors[j]}; translate: ${shiftX}px 0px" id=${j}>${selects[j]}</h1>`);
+  document. write(`<h1 class='circle' style="background: ${Scolors[j]}; translate: ${shiftX}px -30px" id=${j}>${selects[j]}</h1>`);
 }
 window.addEventListener('touchstart', (e) => {
   table = [["H", "H", "O"], ["O", "O"], ["O", "O", "O"], ["H", "H"], ["O", "O", "H", "H"]]
