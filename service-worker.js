@@ -1,44 +1,21 @@
-const CACHE_NAME = "atom-game-cache-v1";
+const CACHE_NAME = "my-app-v1";
 const urlsToCache = [
   "./",
   "./index.html",
-  "./script.js",
   "./style.css",
-  "./Icon.png",
-  "./manifest.json",
+  "./script.js"
 ];
 
-// インストール時にキャッシュ
+// インストール時（初回アクセス）
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       return cache.addAll(urlsToCache);
     })
   );
-  self.skipWaiting();
 });
 
-// リクエスト時にキャッシュを返す
-self.addEventListener("fetch", (event) => {
-  event.respondWith(
-    fetch(event.request)
-      .then((response) => {
-        // ネットワークから取得できたらキャッシュを更新
-        const responseClone = response.clone();
-        caches.open(CACHE_NAME).then((cache) => {
-          cache.put(event.request, responseClone);
-        });
-        return response;
-      })
-      .catch(() => {
-        // オフラインならキャッシュを使う
-        return caches.match(event.request);
-      })
-  );
-});
-
-
-// 古いキャッシュを削除
+// 新しいバージョンが来たら古いキャッシュを削除
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
@@ -50,5 +27,20 @@ self.addEventListener("activate", (event) => {
         })
       );
     })
+  );
+});
+
+// ネットワーク優先（オンラインなら最新取得 → キャッシュ更新）
+self.addEventListener("fetch", (event) => {
+  event.respondWith(
+    fetch(event.request)
+      .then((response) => {
+        const cloned = response.clone();
+        caches.open(CACHE_NAME).then((cache) => {
+          cache.put(event.request, cloned);
+        });
+        return response; // 最新を返す
+      })
+      .catch(() => caches.match(event.request)) // オフラインはキャッシュ
   );
 });
