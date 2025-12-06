@@ -7,8 +7,8 @@
   text-align: center;
   display: inline-block;
 }
-body {
-  overflow-y:hidden;
+html,body {
+  overflow: hidden;
 }
 h1 {
   margin-bottom: -0.6em
