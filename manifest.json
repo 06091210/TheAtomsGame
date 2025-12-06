@@ -1,0 +1,11 @@
+{
+  "name": "TheAtomsGame",
+  "short_name": "AG",
+  "start_url": "./index.html",
+  "icons": [
+    {
+      "src": "Icon.jpg",
+      "sizes": "512x512",
+    }
+  ]
+}
