@@ -7,7 +7,7 @@
   text-align: center;
   display: inline-block;
 }
-html,body {
+body {
   overflow: hidden;
   max-height: 100%;
 }
