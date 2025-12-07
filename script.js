@@ -33,7 +33,7 @@ window.addEventListener('touchmove', (e) => {
   if (Ecoordinates[Ecoordinates.length - 1] !== block) {
     if (!Ecoordinates.includes(block)) {
       if (Ecoordinates.length != 0) {
-        sub = Math.abs(block-Ecoordinates[Ecoordinates - 1]);
+        sub = Math.abs(block-Ecoordinates[Ecoordinates.length - 1]);
         if ((sub == 1) || (sub == line)) {
           Ecoordinates.push(block);
         }
