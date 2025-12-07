@@ -1,4 +1,3 @@
-function move() {
 space = 103
 line = Math. floor (window.innerWidth / space);
 row = Math. floor (window.innerHeight / space);
@@ -71,5 +70,3 @@ window.addEventListener('touchend', (e) => {
     }
   }
 });
-}
-move();
