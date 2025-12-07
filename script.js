@@ -1,9 +1,8 @@
+function move() {
 space = 103
-const width = document.documentElement.clientWidth;
-const height = document.documentElement.clientHeight;
-line = Math. floor (width / space);
-row = Math. floor (height / space);
-shiftX = (width - (space * line)) / 2;
+line = Math. floor (window.innerWidth / space);
+row = Math. floor (window.innerHeight / space);
+shiftX = (window.innerWidth - (space * line)) / 2;
 shiftY = 10;
 elements = ["H", "O"];
 colors = ["#00A0F0", "#0000C0"];
@@ -32,7 +31,15 @@ window.addEventListener('touchmove', (e) => {
   block = blockX + blockY;
   if (Ecoordinates[Ecoordinates.length - 1] !== block) {
     if (!Ecoordinates.includes(block)) {
-      Ecoordinates.push(block);
+      if (Ecoordinates.length != 0) {
+        sub = Math.abs(block-Ecoordinates[Ecoordinates - 1]);
+        if ((sub == 1) || (sub == line)) {
+          Ecoordinates.push(block);
+        }
+      }
+      else {
+        Ecoordinates.push(block);
+      }
     }
   }
 });
@@ -64,3 +71,4 @@ window.addEventListener('touchend', (e) => {
     }
   }
 });
+}
