@@ -1,6 +1,6 @@
 {
   "name": "The Atoms Game",
-  "short_name": "The Atoms Game",
+  "short_name": "TAG",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
