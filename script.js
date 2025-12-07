@@ -72,3 +72,4 @@ window.addEventListener('touchend', (e) => {
   }
 });
 }
+move();
