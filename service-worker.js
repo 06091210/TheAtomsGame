@@ -3,7 +3,9 @@ const urlsToCache = [
   "./",
   "./index.html",
   "./style.css",
-  "./script.js"
+  "./script.js",
+  "./Icon.png",
+  "./manifest.json"
 ];
 
 // インストール時（初回アクセス）
