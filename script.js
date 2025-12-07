@@ -1,7 +1,9 @@
 space = 103
-line = Math. floor (window.innerWidth / space);
-row = Math. floor (window.innerHeight / space);
-shiftX = (window.innerWidth - (space * line)) / 2;
+const width = document.documentElement.clientWidth;
+const height = document.documentElement.clientHeight;
+line = Math. floor (width / space);
+row = Math. floor (height / space);
+shiftX = (width - (space * line)) / 2;
 shiftY = 10;
 elements = ["H", "O"];
 colors = ["#00A0F0", "#0000C0"];
