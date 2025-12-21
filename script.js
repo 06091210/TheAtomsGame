@@ -7,6 +7,7 @@ shiftX = (width - (space * line)) / 2;
 shiftY = 10;
 elements = ["H", "O"];
 colors = ["#00A0F0", "#0000C0"];
+function set() {
 Scolors = [];
 selects = [];
 Eselect = [];
@@ -19,6 +20,15 @@ for (let i=0; i<line*row; i++) {
 for (let j=0; j<selects.length; j++) {
   document. write(`<h1 class='circle' style="background: ${Scolors[j]}; translate: ${shiftX}px -20px" id=${j}>${selects[j]}</h1>`);
 }
+}
+function reset() {
+  for (let n=0; n<selects.length; n++) {
+    document.getElementById(String(n)).remove();
+  }
+  set();
+}
+set();
+document.write("<button id='reset' onclick='reset'>Reset</button>");
 window.addEventListener('touchstart', (e) => {
   table = [["H", "H", "O"], ["O", "O"], ["O", "O", "O"], ["H", "H"], ["O", "O", "H", "H"]];
   Ecoordinates.splice(0, Ecoordinates.length);
