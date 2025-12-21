@@ -20,10 +20,17 @@ for (let i=0; i<line*row; i++) {
 for (let j=0; j<selects.length; j++) {
   document. write(`<h1 class='circle' style="background: ${Scolors[j]}; translate: ${shiftX}px -20px" id=${j}>${selects[j]}</h1>`);
 }
+  document.write("<button id='reset' onclick='reset()'>Reset</button>");
 }
 function reset() {
+  document.getElementById('reset').remove();
   for (let n=0; n<selects.length; n++) {
-    document.getElementById(String(n)).remove();
+    if (document.getElementById(String(n)) == null) {
+      document.getElementById("no").remove();
+    }
+    else {
+      document.getElementById(String(n)).remove();
+    }
   }
   set();
 }
