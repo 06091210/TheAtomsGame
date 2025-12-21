@@ -28,7 +28,7 @@ function reset() {
   set();
 }
 set();
-document.write("<button id='reset' onclick='reset'>Reset</button>");
+document.write("<br><button id='reset' onclick='reset()'>Reset</button>");
 window.addEventListener('touchstart', (e) => {
   table = [["H", "H", "O"], ["O", "O"], ["O", "O", "O"], ["H", "H"], ["O", "O", "H", "H"]];
   Ecoordinates.splice(0, Ecoordinates.length);
